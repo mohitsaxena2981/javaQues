@@ -9,8 +9,7 @@ public class Main
             this.data=data;
             this.next=null;
         }
-    }
-    
+    }  
     public static Node head;
     public static Node tail;
     public static void insertatbeg(int data)
@@ -24,7 +23,6 @@ public class Main
         nn.next=head;
         head=nn;
     }
-    
     public static boolean ispalin()
     {
         // find middle node
