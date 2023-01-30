@@ -284,7 +284,7 @@ public class Main{
 
 */
 
-// height of tree
+// count nodes of tree
 
 /*
 import java.util.*;
@@ -387,8 +387,10 @@ public class Main{
 */
 
 
-// diameter of tree
 
+
+// diameter
+/*
 import java.util.*;
 public class Main{
     static class Node{
@@ -416,15 +418,36 @@ public class Main{
             n.right=buildTree(nodes);
             return n;
         }
+        public static int height(Node root)
+        {
+            if(root==null)
+            {
+                return 0;
+            }
+            int lheight=height(root.left);
+            int rheight=height(root.right);
+            return Math.max(lheight,rheight)+1;
+        }
         public static int diametertree(Node root)
         {
+            if(root==null)
+            {
+                return 0;
+            }
+            int leftDia=diametertree(root.left);
+            int leftheight=height(root.left);
+            int rightDia=diametertree(root.right);
+            int rightheight=diametertree(root.right);
             
+            int selfdia=leftheight+rightheight+1;
+            return Math.max(selfdia,Math.max(leftDia,rightDia));
         }
     }
     public static void main (String[] args) {
         int nodes[]=new int[]{1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree obj=new BinaryTree();
         Node root=obj.buildTree(nodes);
-        System.out.println(obj.nodesum(root));
+        System.out.println(obj.diametertree(root));
     }
 }
+*/
