@@ -246,3 +246,60 @@ public class Main
 }
 
 */
+
+
+// heap sort o(nlogn)
+
+
+/*
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[]=new int[]{123,43,56,7789,2,3,42,1};
+		heapsort(arr,arr.length);
+		for(int x=0;x<arr.length;x++)
+		{
+		    System.out.print(arr[x]+" ");
+		}
+	}
+	public static void heapsort(int arr[],int n)
+	{
+	    for(int x=n/2-1;x>=0;x--)
+	    {
+	        heapify(arr,x,n);
+	    }
+	    for(int x=n-1;x>0;x--)
+	    {
+	        int temp=arr[0];
+	        arr[0]=arr[x];
+	        arr[x]=temp;
+	        heapify(arr,0,x);
+	    }
+	    
+	    
+	}
+	public static void heapify(int arr[],int x,int n)
+	{
+	    int largest=x;
+	    int l=2*x+1;
+	    int r=2*x+2;
+	    if(l<n && arr[l]>arr[largest])
+	    {
+	        largest=l;
+	    }
+	    if(r<n && arr[r]>arr[largest])
+	    {
+	        largest=r;
+	    }
+	    if(largest!=x)
+	    {
+	        int temp=arr[x];
+	        arr[x]=arr[largest];
+	        arr[largest]=temp;
+	        heapify(arr,largest,n);
+	    }
+	    
+	}
+}
+*/
