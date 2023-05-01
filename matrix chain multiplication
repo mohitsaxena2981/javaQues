@@ -1,0 +1,29 @@
+// matrix chain multiplication
+
+import java.util.*;
+public class Main
+
+{
+    public static int matrixorder(int p[],int i,int j)
+    {
+        if(i==j)
+        {
+            return 0;
+        }
+        int min=Integer.MAX_VALUE;
+        for(int k=i;k<j;k++)
+        {
+            int count=matrixorder(p,i,k)+matrixorder(p,k+1,j)+p[i-1]*p[j]*p[k];
+            if(count<min)
+            {
+                min=count;
+            }
+        }
+        return min;
+    }
+    public static void main (String[] args) {
+        int arr[] = { 1, 2, 3, 4, 3 };
+        System.out.println(matrixorder(arr,1,arr.length-1));
+    }
+    
+}
