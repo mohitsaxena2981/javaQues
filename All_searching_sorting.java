@@ -347,3 +347,40 @@ public class Main{
     }
 }
 */
+
+
+
+
+// shell sort o(nlogn) , o(nlog(n^2)) , o(n^2)    ,o(n)
+
+
+/*
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[]=new int[]{123,43,56,7789,2,3,42,1};
+		shellsort(arr,arr.length);
+		for(int x=0;x<arr.length;x++)
+		{
+		    System.out.print(arr[x]+" ");
+		}
+	}
+	public static void shellsort(int arr[],int n)
+	{
+	    for(int gap=n/2;gap>0;gap/=2)
+	    {
+	        for(int i=gap;i<n;i++)
+	        {
+	            int temp=arr[i];
+	            int j;
+	            for(j=i;j>=gap && arr[j-gap]>temp;j-=gap)
+	            {
+	                arr[j]=arr[j-gap];
+	            }
+	            arr[j]=temp;
+	        }
+	    }
+	}
+}
+*/
