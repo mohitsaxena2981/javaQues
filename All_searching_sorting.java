@@ -187,3 +187,62 @@ public class Main{
 */
 
 
+
+// radix sort   o(nk) ,o(nk) ,o(nk)    o(n+k) 
+/*
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[]=new int[]{123,43,56,7789,2,3,42,1};
+		readixsort(arr,arr.length);
+		for(int x=0;x<arr.length;x++)
+		{
+		    System.out.print(arr[x]+" ");
+		}
+	}
+	public static int getmax(int arr[],int n)
+	{
+	    int largest=Integer.MAX_VALUE;
+	    for(int x=0;x<arr.length;x++)
+	    {
+	        if(arr[x]>largest)
+	        {
+	            largest=arr[x];
+	        }
+	    }
+	    return largest;
+	}
+	public static void readixsort(int arr[],int n)
+	{
+	    int max=getmax(arr,n);
+	    for(int place=1;max/place>0;place*=10)
+	    {
+	        sort(arr,n,place);
+	    }
+	}
+	public static void sort(int arr[],int n,int place)
+	{
+	    int output[]=new int[arr.length+1];
+	    int count[]=new int[10];
+	    for(int x=0;x<arr.length;x++)
+	    {
+	        count[(arr[x]/place)%10]++;
+	    }
+	    for(int x=1;x<10;x++)
+	    {
+	        count[x]+=count[x-1];
+	    }
+	    for(int x=arr.length-1;x>=0;x--)
+	    {
+	        output[count[(arr[x]/place)%10]-1]=arr[x];
+	        count[(arr[x]/place)%10]--;
+	    }
+	    for(int x=0;x<arr.length;x++)
+		{
+		    arr[x]=output[x];
+		}
+	}
+}
+
+*/
