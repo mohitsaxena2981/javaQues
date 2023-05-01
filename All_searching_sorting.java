@@ -303,3 +303,47 @@ public class Main
 	}
 }
 */
+
+// bucket sort  o(n+k)
+
+/*
+import java.util.*;
+public class Main{
+    public static void main (String[] args) {
+        float arr[]=new float[]{(float)0.432,(float)0.23,(float)0.562,(float)0.987,(float)0.12};
+        bucketsort(arr,arr.length);
+        for(int x=0;x<arr.length;x++)
+        {
+            System.out.print(arr[x]+" ");
+        } 
+    }
+    
+    public static void bucketsort(float arr[],int n)
+    {
+        if(n<=0)
+        
+        {
+            return;
+        }
+        Vector<Float> bucket[]=new Vector[n];
+        for(int x=0;x<n;x++)
+        {
+            bucket[x]=new Vector<Float>();
+        }
+        for(int x=0;x<n;x++)
+        {
+            float idx=arr[x]*n;
+            bucket[(int)(idx)].add(arr[x]);
+        }
+        int index=0;
+        for(int x=0;x<arr.length;x++)
+        {
+            for(int y=0;y<bucket[x].size();y++)
+            {
+                arr[index]=bucket[x].get(y);
+                index++;
+            }
+        }
+    }
+}
+*/
